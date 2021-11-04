@@ -1,0 +1,60 @@
+<?php
+/**
+ * @var Magento\Framework\View\Element\Template $block
+ */
+//$blogViewModel = $block->getData('ViewModel');
+?>
+<div class="blog-container"
+     data-bind="scope: 'blog'">
+    <!-- ko template: getTemplate() --><!-- /ko -->
+</div>
+<script type="text/x-magento-init">
+    {
+        "*": {
+            "Magento_Ui/js/core/app": {
+                "components": {
+                    "blog": {
+                        "component": "Mage_Blog/js/blog",
+<!--                        "posts": --><?php //$blogViewModel->getPosts() ?>
+                        "posts":
+                        [
+            {
+                "id" => 1,
+                "title" => "First post",
+                "url" => "http =>//magento.test/first-post",
+                "published_data" => "2021-12-24",
+                "content" => "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias amet blanditiis ea libero minima odio perspiciatis saepe? A commodi ducimus et illum, impedit maxime mollitia qui quisquam, repudiandae saepe voluptas?",
+                "author" => "Author1"
+            },
+            {
+                "id" => 2,
+                "title" => "Second post",
+                "url" => "http =>//magento.test/second-post",
+                "published_data" => "2021-09-7",
+                "content" => "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias amet blanditiis ea libero minima odio perspiciatis saepe? A commodi ducimus et illum, impedit maxime mollitia qui quisquam, repudiandae saepe voluptas?",
+                "author" => "Author2"
+
+            },
+            {
+                "id" => 3,
+                "title" => "Third post",
+                "url" => "http =>//magento.test/third-post",
+                "published_data" => "2021-10-4",
+                "content" => "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias amet blanditiis ea libero minima odio perspiciatis saepe? A commodi ducimus et illum, impedit maxime mollitia qui quisquam, repudiandae saepe voluptas?",
+                "author" => "Author3"
+            },
+            {
+                "id" => 4,
+                "title" => "Fourth post",
+                "url" => "http =>//magento.test/fourth-post",
+                "published_data" => "2021-10-11",
+                "content" => "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias amet blanditiis ea libero minima odio perspiciatis saepe? A commodi ducimus et illum, impedit maxime mollitia qui quisquam, repudiandae saepe voluptas?",
+                "author" => "Author4"
+            }
+        [
+                    }
+                }
+            }
+        }
+    }
+</script>

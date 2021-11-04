@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <section_id>
+            <product_id>
+                <add_to_price>3</add_to_price>
+            </product_id>
+        </section_id>
+        <secondSect_id>
+            <prod_id>
+                <add_to_name>
+                    My add
+                </add_to_name>
+            </prod_id>
+        </secondSect_id>
+    </default>
+</config>

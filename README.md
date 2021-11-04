@@ -1,0 +1,2 @@
+Hello Magento
+Hello, Hexlet!

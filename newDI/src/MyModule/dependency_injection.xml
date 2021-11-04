@@ -1,0 +1,9 @@
+<?xml verstion="1.0"?>
+
+<di xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../Framework/di.xsd">
+
+    <class name="\MyModule\SqlAdapter.php">
+            <argument xsi:type="string" name="connection">default_connection</argument>
+    </class>
+</di>
+
