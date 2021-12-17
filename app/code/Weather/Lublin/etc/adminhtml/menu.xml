@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Weather_Lublin::weather" title="Weather"
+             translate="title" module="Weather_Lublin"
+             sortOrder="950" resource="Weather_Lublin::weather"
+        />
+        <add id="Weather_Lublin::lublin" title="Lublin"
+             translate="title" module="Weather_Lublin"
+             sortOrder="1100" resource="Weather_Lublin::lublin"
+             action="weather/lublin"
+             parent="Weather_Lublin::weather"
+        />
+    </menu>
+</config>

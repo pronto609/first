@@ -1,0 +1,13 @@
+<?php
+/**
+ * @var Weather\Lublin\Block\Weather $block
+ */
+?>
+<div class="weather-block">
+    <?php if ($block->isEnabled()) : ?>
+        <?php foreach ($block->getWeatherData() as $key => $value): ?>
+            <span class="weather-item"><?= "$key: $value" ?></span>
+            <br>
+        <?php endforeach; ?>
+    <?php endif; ?>
+</div>

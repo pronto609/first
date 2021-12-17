@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="weather" translate="label" sortOrder="10000">
+            <label>Weather</label>
+        </tab>
+        <section id="weather" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>Weather Lublin</label>
+            <tab>weather</tab>
+            <resource>Weather_Lublin::weather</resource>
+            <group id="general" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Config module Weather Lublin</label>
+                <field id="enabled" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Enabled</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+<!--                <field id="update_time" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">-->
+<!--                    <label>Time interval for updating weather</label>-->
+<!--                </field>-->
+                <field id="city" translate="label" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>City</label>
+                    <depends>
+                        <field id="weather/general/enabled">1</field>
+                    </depends>
+                </field>
+                <field id="parameters" translate="label" type="multiselect" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Weather parameters</label>
+                    <source_model>Weather\Lublin\Model\Config\Source\ConfigWeatherParamsProvider</source_model>
+                    <depends>
+                        <field id="weather/general/enabled">1</field>
+                    </depends>
+                </field>
+                <field id="api_endpoint" translate="label" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>API endpoint</label>
+                    <depends>
+                        <field id="weather/general/enabled">1</field>
+                    </depends>
+                </field>
+                <field id="api_key" translate="label" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>API key</label>
+                    <depends>
+                        <field id="weather/general/enabled">1</field>
+                    </depends>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

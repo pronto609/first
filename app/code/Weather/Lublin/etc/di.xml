@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <preference for="Weather\Lublin\Api\Data\WeatherInterface"
+                type="Weather\Lublin\Model\Weather"/>
+    <preference for="Weather\Lublin\Api\WeatherRepositoryInterface"
+                type="Weather\Lublin\Model\WeatherRepository"/>
+    <preference for="Weather\Lublin\Api\Data\WeatherSearchResultInterface"
+                type="Magento\Framework\Api\SearchResults" />
+
+    <virtualType name="Weather\Lublin\Model\ResourceModel\Weather\Grid\Collection" type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">weather_lublin</argument>
+            <argument name="resourceModel" xsi:type="string">Weather\Lublin\Model\ResourceModel\Weather</argument>
+        </arguments>
+    </virtualType>
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="weather_lublin_listing_data_source" xsi:type="string">Weather\Lublin\Model\ResourceModel\Weather\Grid\Collection</item>
+            </argument>
+        </arguments>
+    </type>
+
+</config>
